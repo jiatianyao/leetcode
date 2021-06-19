@@ -25,7 +25,14 @@ package 深搜广搜;
  * https://leetcode-cn.com/problems/target-sum/
  */
 public class l002_findTargetSumWays_494 {
+    public int dfs(int index,int target,int[] nums){
+        if(index == nums.length){
+            return target ==0 ? 1 : 0;
+        }
+        return dfs(index+1,target-nums[index],nums) +  dfs(index+1,target+nums[index],nums) ;
+    }
+
     public int findTargetSumWays(int[] nums, int target) {
-        return 0;
+        return dfs(0,target,nums);
     }
 }

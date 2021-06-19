@@ -43,4 +43,9 @@ public class l008_openLock_752 {
     public int openLock(String[] deadends, String target) {
         return 0;
     }
+
+    public String getS(String result,int k){
+
+        return result;
+    }
 }
