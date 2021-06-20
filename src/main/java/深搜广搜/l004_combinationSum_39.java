@@ -1,5 +1,8 @@
 package 深搜广搜;
 
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -33,7 +36,27 @@ import java.util.List;
  * https://leetcode-cn.com/problems/combination-sum/
  */
 public class l004_combinationSum_39 {
+    public List<List<Integer>> res = new ArrayList<>();
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        return null;
+        backtrack(candidates,target,new LinkedList<>(),0);
+        return res;
+    }
+
+    public void backtrack(int[] candidates, int target, Deque<Integer> list, int index){
+        if(target < 0){
+            return;
+        }
+
+        if(target == 0){
+            res.add(new ArrayList<>(list));
+            return;
+        }
+
+        for (int i = index; i < candidates.length; i++) {
+            int candidate = candidates[i];
+            list.addLast(candidate);
+            backtrack(candidates,target-candidate,list,i);
+            list.removeLast();
+        }
     }
 }

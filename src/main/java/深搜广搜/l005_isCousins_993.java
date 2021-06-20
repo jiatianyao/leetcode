@@ -34,7 +34,28 @@ import common.TreeNode;
  * https://leetcode-cn.com/problems/cousins-in-binary-tree/
  */
 public class l005_isCousins_993 {
+    // 解法1:深搜
     public boolean isCousins(TreeNode root, int x, int y) {
-        return false;
+        int[] xints = dfs(root,null,0,x);
+        int[] yints = dfs(root,null,0,y);
+        return xints[0] != yints[0] && xints[1] == yints[1];
+    }
+
+    /**
+     *
+     * @param node 需要遍历节点
+     * @param father 当前节点的父节点
+     * @param depth 当前深度
+     * @param x 需要查找的节点
+     * @return 父节点/层数
+     */
+    private int[] dfs(TreeNode node, TreeNode father, int depth, int x) {
+        if(node == null) return new int[]{-1,-1};
+        if(node.val == x){
+            return new int[]{father !=null ? father.val : 1,depth};
+        }
+        int[] l = dfs(node.left,node,depth+1,x);
+        if(l[0] != -1)return l;
+        return  dfs(node.right,node,depth+1,x);
     }
 }
