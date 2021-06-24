@@ -1,5 +1,9 @@
 package 深搜广搜;
 
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Set;
+
 /**
  * 752. 打开转盘锁
  * 你有一个带有四个圆形拨轮的转盘锁。每个拨轮都有10个数字： '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' 。每个拨轮可以自由旋转：例如把 '9' 变为  '0'，'0' 变为 '9' 。每次旋转都只能旋转一个拨轮的一位数字。
@@ -41,11 +45,51 @@ package 深搜广搜;
  */
 public class l008_openLock_752 {
     public int openLock(String[] deadends, String target) {
-        return 0;
+        Set<String> deads = new HashSet<>();
+        for (String deadend : deadends) {
+            deads.add(deadend);
+        }
+        LinkedList<String> queue = new LinkedList<>();
+        queue.offer("0000");
+        Set<String> visited = new HashSet<>();//旋转过的组合
+        visited.add("0000");
+        int step = 0;
+        while(!queue.isEmpty()){
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                String cur = queue.poll();
+                if(deads.contains(cur)) continue;
+                if(cur.equals(target)) return step;
+
+                for (int j = 0; j < 4; j++) {
+                    String up = turnUp(cur,j);
+                    if(!visited.contains(up)){
+                        queue.offer(up);
+                        visited.add(up);
+                    }
+                    String down = turnDown(cur,j);
+                    if(!visited.contains(down)){
+                        queue.offer(down);
+                        visited.add(down);
+                    }
+                }
+            }
+            step++;
+        }
+        return -1;
     }
 
-    public String getS(String result,int k){
+    public String turnUp(String str,int index){
+        char[] chars = str.toCharArray();
+        if(chars[index] == '9') chars[index] = '0';
+        else chars[index] +=1;
+        return new String(chars);
+    }
 
-        return result;
+    public String turnDown(String str,int index){
+        char[] chars = str.toCharArray();
+        if(chars[index] == '0') chars[index] = '9';
+        else chars[index] -=1;
+        return new String(chars);
     }
 }
