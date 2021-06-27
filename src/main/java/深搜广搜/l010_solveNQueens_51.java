@@ -31,7 +31,6 @@ import java.util.List;
  * https://leetcode-cn.com/problems/n-queens/
  */
 public class l010_solveNQueens_51 {
-
     public List<List<String>> solveNQueens(int n) {
         List<List<String>> result = new ArrayList<>();
         if(n==1){
