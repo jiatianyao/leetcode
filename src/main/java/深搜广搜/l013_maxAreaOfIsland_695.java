@@ -10,13 +10,13 @@ package 深搜广搜;
  * 找到给定的二维数组中最大的岛屿面积。(如果没有岛屿，则返回面积为 0 。)
  * 示例 1:
  * [[0,0,1,0,0,0,0,1,0,0,0,0,0],
- *  [0,0,0,0,0,0,0,1,1,1,0,0,0],
- *  [0,1,1,0,1,0,0,0,0,0,0,0,0],
- *  [0,1,0,0,1,1,0,0,1,0,1,0,0],
- *  [0,1,0,0,1,1,0,0,1,1,1,0,0],
- *  [0,0,0,0,0,0,0,0,0,0,1,0,0],
- *  [0,0,0,0,0,0,0,1,1,1,0,0,0],
- *  [0,0,0,0,0,0,0,1,1,0,0,0,0]]
+ * [0,0,0,0,0,0,0,1,1,1,0,0,0],
+ * [0,1,1,0,1,0,0,0,0,0,0,0,0],
+ * [0,1,0,0,1,1,0,0,1,0,1,0,0],
+ * [0,1,0,0,1,1,0,0,1,1,1,0,0],
+ * [0,0,0,0,0,0,0,0,0,0,1,0,0],
+ * [0,0,0,0,0,0,0,1,1,1,0,0,0],
+ * [0,0,0,0,0,0,0,1,1,0,0,0,0]]
  * 对于上面这个给定矩阵应返回 6。注意答案不应该是 11 ，因为岛屿只能包含水平或垂直的四个方向的 1 。
  *
  * 示例 2:
@@ -27,16 +27,17 @@ package 深搜广搜;
  * https://leetcode-cn.com/problems/max-area-of-island/
  */
 public class l013_maxAreaOfIsland_695 {
-    int m,n;
+    int m, n;
+
     public int maxAreaOfIsland(int[][] grid) {
         m = grid.length;
         n = grid[0].length;
         int result = 0;
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                if(grid[i][j]==1) {
+                if (grid[i][j] == 1) {
                     int res = dfs(grid, i, j);
-                    result=Math.max(res,result);
+                    result = Math.max(res, result);
                 }
 
             }
@@ -52,11 +53,11 @@ public class l013_maxAreaOfIsland_695 {
             return 0;
         }
         int res = 0;
-        grid[i][j]=2;
-        res+=dfs(grid, i + 1, j);
-        res+=dfs(grid, i - 1, j);
-        res+=dfs(grid, i, j + 1);
-        res+=dfs(grid, i, j - 1);
+        grid[i][j] = 2;
+        res += dfs(grid, i + 1, j);
+        res += dfs(grid, i - 1, j);
+        res += dfs(grid, i, j + 1);
+        res += dfs(grid, i, j - 1);
         return res;
     }
 
