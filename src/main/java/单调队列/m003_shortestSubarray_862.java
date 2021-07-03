@@ -35,7 +35,7 @@ import java.util.Deque;
  *
  * https://leetcode-cn.com/problems/shortest-subarray-with-sum-at-least-k/
  */
-public class m0003_shortestSubarray_862 {
+public class m003_shortestSubarray_862 {
     public int shortestSubarray(int[] nums, int k) {
         long[] arr = new long[nums.length+1];
         for (int i = 0; i < nums.length; i++) {

@@ -24,17 +24,16 @@ import java.util.Deque;
  * [7] 最大绝对差 |7-7| = 0 <= 4.
  * 因此，满足题意的最长子数组的长度为 2 。
  * 示例 2：
- *
  * 输入：nums = [10,1,2,4,7,2], limit = 5
  * 输出：4
  * 解释：满足题意的最长子数组是 [2,4,7,2]，其最大绝对差 |2-7| = 5 <= 5 。
  * 示例 3：
- *
  * 输入：nums = [4,2,2,2,4,4,2,2], limit = 0
  * 输出：3
+ *
  * https://leetcode-cn.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/
  */
-public class m0004_longestSubarray_1438 {
+public class m004_longestSubarray_1438 {
     public int longestSubarray(int[] nums, int limit) {
         int n = nums.length;
         //单调递减队列

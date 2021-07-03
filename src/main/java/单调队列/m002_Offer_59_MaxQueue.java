@@ -27,13 +27,13 @@ import java.util.Queue;
  *
  * https://leetcode-cn.com/problems/dui-lie-de-zui-da-zhi-lcof/
  */
-public class m0002_Offer_59_MaxQueue {
+public class m002_Offer_59_MaxQueue {
     //主队列,正常的存取数据
     Queue<Integer> queue;
     //单调不减的双端队列,存储主队列中的最大值
     Deque<Integer> deque;
 
-    public m0002_Offer_59_MaxQueue() {
+    public m002_Offer_59_MaxQueue() {
         queue = new ArrayDeque<>();
         deque = new ArrayDeque<>();
     }
