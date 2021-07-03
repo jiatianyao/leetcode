@@ -32,6 +32,8 @@ import java.util.Deque;
  *
  * 输入：nums = [4,2,2,2,4,4,2,2], limit = 0
  * 输出：3
+ *
+ * https://leetcode-cn.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/
  */
 public class m0004_longestSubarray_1438 {
     public int longestSubarray(int[] nums, int limit) {
