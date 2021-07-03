@@ -1,5 +1,6 @@
 package 单调队列;
 
+import java.util.ArrayDeque;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -50,29 +51,30 @@ import java.util.PriorityQueue;
  *
  * https://leetcode-cn.com/problems/sliding-window-maximum/
  */
-public class m001_maxSlidingWindow_239 {
-    //方法1:大顶堆
+public class m001_maxSlidingWindow_239_2 {
+    //方法2:单调队列
     public int[] maxSlidingWindow(int[] nums, int k) {
         int n = nums.length;
-        PriorityQueue<int[] > pq = new PriorityQueue(new Comparator<int[]>() {
-            @Override
-            //值相同按照下标排序,值不同按照值排序o是{nums[i],i}
-            public int compare(int[] o1, int[] o2) {
-                return o1[0] != o2[0] ? o2[0]- o1[0] : o2[1]- o1[1] ;
-            }
-        });
-
+        //单调递减队列
+        ArrayDeque<Integer> deque = new ArrayDeque<>();
         for (int i = 0; i < k; i++) {
-            pq.offer(new int[]{nums[i],i});
+            //如果当前值比队尾值大,需要将队尾值依次比较,大于则取出
+            while(!deque.isEmpty() && nums[i] > nums[deque.peekLast()]){
+                deque.pollLast();
+            }
+            deque.offerLast(i);
         }
         int[] result = new int[n-k+1];
-        result[0] = pq.peek()[0];
+        result[0] = nums[deque.peekFirst()];
         for (int i = k; i < n; i++) {
-            pq.offer(new int[]{nums[i],i});
-            while(pq.peek()[1]<= i-k){
-                pq.poll();
+            while(!deque.isEmpty() && nums[i] >= nums[deque.peekLast()]){
+                deque.pollLast();
             }
-            result[i-k+1] = pq.peek()[0];
+            deque.offer(i);
+            while (deque.peekFirst() <= i -k){
+                deque.pollFirst();
+            }
+            result[i-k+1] = nums[deque.peekFirst()];
         }
         return result;
     }
