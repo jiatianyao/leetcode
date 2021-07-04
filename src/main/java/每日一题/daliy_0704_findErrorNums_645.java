@@ -14,6 +14,8 @@ import java.util.HashSet;
  * 示例 2：
  * 输入：nums = [1,1]
  * 输出：[1,2]
+ *
+ * https://leetcode-cn.com/problems/set-mismatch/submissions/
  */
 public class daliy_0704_findErrorNums_645 {
     //这可能是最low的解法了
