@@ -34,6 +34,7 @@ import java.util.List;
  * 输入：s = "101023"
  * 输出：["1.0.10.23","1.0.102.3","10.1.0.23","10.10.2.3","101.0.2.3"]
  *
+ * https://leetcode-cn.com/problems/restore-ip-addresses/
  */
 public class m006_restoreIpAddresses_93 {
     public List<String> restoreIpAddresses(String s) {
