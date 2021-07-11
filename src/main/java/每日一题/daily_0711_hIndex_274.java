@@ -2,6 +2,9 @@ package 每日一题;
 
 import java.util.Arrays;
 
+/**
+ *
+ */
 public class daily_0711_hIndex_274 {
     public int hIndex(int[] citations) {
         Arrays.sort(citations);
