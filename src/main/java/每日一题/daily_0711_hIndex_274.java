@@ -3,7 +3,7 @@ package 每日一题;
 import java.util.Arrays;
 
 /**
- *
+ * https://leetcode-cn.com/problems/h-index/
  */
 public class daily_0711_hIndex_274 {
     public int hIndex(int[] citations) {
