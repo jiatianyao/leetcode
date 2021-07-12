@@ -18,7 +18,6 @@ package 每日一题;
  * 如果 h 有多有种可能的值 ，h 指数是其中最大的那个。
  *
  * https://leetcode-cn.com/problems/h-index-ii/
- *
  */
 public class daily_0712_hIndex_275 {
 
