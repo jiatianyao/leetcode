@@ -1,4 +1,4 @@
-package 练习;
+package 位运算;
 
 /**
  * 268. 丢失的数字
@@ -33,7 +33,7 @@ package 练习;
  *
  * https://leetcode-cn.com/problems/missing-number/
  */
-public class missingNumber_268 {
+public class wei_003_missingNumber_268 {
     public int missingNumber(int[] nums) {
         int ans = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -41,6 +41,15 @@ public class missingNumber_268 {
             ans ^= num;
         }
         for (int i = 0; i < nums.length+1; i++) {
+            ans ^= i;
+        }
+        return ans;
+    }
+
+    public int missingNumber2(int[] nums) {
+        int ans = nums.length;
+        for (int i = 0; i < nums.length; i++) {
+            ans ^= nums[i];
             ans ^= i;
         }
         return ans;
