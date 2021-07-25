@@ -27,6 +27,7 @@ public class a108_oddEvenList_328 {
         ListNode odd = head;
         ListNode evenHead = head.next;
         ListNode even = evenHead;
+        //分离链表,将偶数点从head中剥离出来
         while (even != null && even.next != null) {
             odd.next = even.next;
             odd = odd.next;
