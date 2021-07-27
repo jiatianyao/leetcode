@@ -27,6 +27,7 @@ import java.util.Deque;
  * 对于树中每个节点 root.val == min(root.left.val, root.right.val)
  *
  * https://leetcode-cn.com/problems/second-minimum-node-in-a-binary-tree/
+ *
  */
 public class daily_findSecondMinimumValue_671 {
 
