@@ -24,6 +24,7 @@ package 每日一题;
  * 示例 4:
  * 输入: columnTitle = "FXSHRXW"
  * 输出: 2147483647
+ * https://leetcode-cn.com/problems/excel-sheet-column-number/
  */
 public class daily_0730_titleToNumber_171 {
 
