@@ -50,6 +50,8 @@ import java.util.List;
  * 2 <= n, m <= 100
  * 1 <= k <= m
  * matrix[i][j] 不是 0 就是 1
+ *
+ * https://leetcode-cn.com/problems/the-k-weakest-rows-in-a-matrix/
  */
 public class daily_kWeakestRows_1337 {
     //二分+自定义排序
