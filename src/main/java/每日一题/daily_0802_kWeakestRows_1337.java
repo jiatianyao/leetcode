@@ -53,7 +53,7 @@ import java.util.List;
  *
  * https://leetcode-cn.com/problems/the-k-weakest-rows-in-a-matrix/
  */
-public class daily_kWeakestRows_1337 {
+public class daily_0802_kWeakestRows_1337 {
     //二分+自定义排序
     public int[] kWeakestRows(int[][] mat, int k) {
         int m = mat.length;
@@ -107,7 +107,7 @@ public class daily_kWeakestRows_1337 {
     }
 
     public static void main(String[] args) {
-        daily_kWeakestRows_1337 demo = new daily_kWeakestRows_1337();
+        daily_0802_kWeakestRows_1337 demo = new daily_0802_kWeakestRows_1337();
 //        int[] arr = new int[]{1, 1, 1, 0, 0, 0, 0};
 //        int i = demo.binarySerach(arr, 0, arr.length-1);
 //        int[][] mat = new int[][]{{1,1,0,0,0},{1,1,1,1,0},{1,0,0,0,0},{1,1,0,0,0},{1,1,1,1,1}};
